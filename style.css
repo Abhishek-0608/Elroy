@@ -4685,3 +4685,144 @@ main > section:not(.hero).scroll-reveal.is-visible {
         border-radius: 0 0 20px 20px;
     }
 }
+/* ==================================
+   ELROY LOCATION PANEL - MOBILE FIX
+================================== */
+
+.location-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.location-info {
+    min-width: 0;
+}
+
+.location-map-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 350px;
+    overflow: hidden;
+    border-radius: 0 24px 24px 0;
+    text-decoration: none;
+}
+
+.location-map-image > img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.map-open-label {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    padding: 12px 16px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #0A3A6A;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(10, 58, 106, 0.15);
+    z-index: 2;
+}
+
+.map-open-label strong {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.map-open-label span:last-child {
+    font-size: 12px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 768px) {
+
+    .location-panel {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .location-info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 24px 20px;
+    }
+
+    .location-info h2 {
+        font-size: clamp(25px, 6vw, 32px);
+        line-height: 1.2;
+    }
+
+    .location-info > p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .location-details {
+        width: 100%;
+    }
+
+    .location-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .location-item > div:last-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .location-map-image {
+        width: 100%;
+        height: 280px;
+        min-height: 280px;
+        border-radius: 0;
+        flex-shrink: 0;
+    }
+
+    .location-map-image > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .map-open-label {
+        bottom: 12px;
+        max-width: calc(100% - 20px);
+        padding: 10px 14px;
+    }
+
+    .map-open-label strong {
+        font-size: 12px;
+    }
+
+    .map-open-label span:last-child {
+        font-size: 11px;
+    }
+}
