@@ -63,7 +63,7 @@ const products = [
     {
     title: "Telescopic Conveyor",
     category: "LOADING & UNLOADING",
-    image: "assets/telescopic-conveyor.jpg",
+    image: "assets/telescopic-conveyor.jpeg",
     description:
         "Extendable conveyor systems designed to speed up loading and unloading operations in warehouses and logistics facilities.",
     specs: [
@@ -140,7 +140,7 @@ const products = [
     {
     title: "Flat Belt Conveyor",
     category: "FLAT BELT CONVEYOR",
-    image: "assets/flat-belt-conveyor.jpg",
+    image: "assets/flat-belt-conveyor.png",
     description:
         "Versatile flat belt conveyor systems for efficient transportation of products across manufacturing, packaging and distribution operations.",
     specs: [
@@ -153,7 +153,7 @@ const products = [
 {
     title: "Working Table Conveyor",
     category: "ASSEMBLY & WORKSTATIONS",
-    image: "assets/working-table-conveyor.jpg",
+    image: "assets/working-table-conveyor.png",
     description:
         "Conveyor workstations designed to support assembly, inspection, sorting and packaging processes with an efficient working layout.",
     specs: [
@@ -220,7 +220,7 @@ const products = [
     {
         title: "Complete Conveyor Automation",
         category: "SYSTEM INTEGRATION",
-        image: "assets/product-10.jpg",
+        image: "assets/product-10..png",
         description:
             "Complete integrated conveyor and automation systems designed to connect multiple stages of your operation.",
         specs: [
