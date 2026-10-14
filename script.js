@@ -155,7 +155,7 @@ const products = [
 {
     title: "Spiral Conveyor Systems",
     category: "SPIRAL CONVEYOR",
-    image: "product-08-finale.jpeg",
+    image: "assets/product-08-finale.jpeg",
     description:
         "Space-efficient spiral conveyor systems designed to transport products vertically between different levels while maintaining a smooth and continuous flow.",
     specs: [
