@@ -4826,3 +4826,50 @@ main > section:not(.hero).scroll-reveal.is-visible {
         font-size: 11px;
     }
 }
+
+/* ELROY - Touch and press effects */
+.product-card,
+.service-card,
+.location-map,
+.factory-image,
+.primary-button {
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+    .product-card:hover,
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 30px rgba(10, 58, 106, 0.14);
+    }
+
+    .primary-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(10, 58, 106, 0.2);
+    }
+}
+
+/* Mobile touch / press */
+.product-card:active,
+.service-card:active,
+.location-map:active,
+.factory-image:active,
+.primary-button:active {
+    transform: scale(0.98);
+}
+
+/* Accessibility: reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .service-card,
+    .location-map,
+    .factory-image,
+    .primary-button {
+        transition: none;
+    }
+}
