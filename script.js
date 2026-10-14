@@ -61,30 +61,43 @@ navLinks
 const products = [
 
     {
-        title: "Belt Conveyor Systems",
-        category: "MATERIAL FLOW",
-        image: "assets/product-01.jpg",
-        description:
-            "Reliable conveyor systems designed for smooth and efficient material movement.",
-        specs: [
-            ["Variable", "Drive"],
-            ["Heavy", "Load"],
-            ["PLC", "Control"]
-        ]
-    },
+    title: "Telescopic Conveyor",
+    category: "LOADING & UNLOADING",
+    image: "assets/telescopic-conveyor.jpg",
+    description:
+        "Extendable conveyor systems designed to speed up loading and unloading operations in warehouses and logistics facilities.",
+    specs: [
+        ["Extendable", "Design"],
+        ["Faster", "Loading"],
+        ["Flexible", "Operation"]
+    ]
+},
 
-    {
-        title: "Roller Conveyor Systems",
-        category: "MATERIAL HANDLING",
-        image: "assets/product-02.jpg",
-        description:
-            "Industrial roller conveyors designed for controlled movement of products and materials.",
-        specs: [
-            ["Steel", "Rollers"],
-            ["Modular", "Design"],
-            ["Variable", "Speed"]
-        ]
-    },
+{
+    title: "Roller Conveyor",
+    category: "ROLLER CONVEYOR",
+    image: "assets/roller-conveyor.jpg",
+    description:
+        "Durable roller conveyor systems designed for smooth, reliable movement of boxes, packages and industrial materials.",
+    specs: [
+        ["Steel", "Rollers"],
+        ["Smooth", "Movement"],
+        ["Heavy Duty", "Design"]
+    ]
+},
+
+{
+    title: "Belt Conveyor Systems",
+    category: "MATERIAL FLOW",
+    image: "assets/product-01.jpg",
+    description:
+        "Reliable conveyor systems designed for smooth and efficient material movement.",
+    specs: [
+        ["Variable", "Drive"],
+        ["Heavy", "Load"],
+        ["PLC", "Control"]
+    ]
+},
 
     {
         title: "Inclined Conveyor Systems",
@@ -124,6 +137,31 @@ const products = [
             ["Professional", "Setup"]
         ]
     },
+    {
+    title: "Flat Belt Conveyor",
+    category: "FLAT BELT CONVEYOR",
+    image: "assets/flat-belt-conveyor.jpg",
+    description:
+        "Versatile flat belt conveyor systems for efficient transportation of products across manufacturing, packaging and distribution operations.",
+    specs: [
+        ["Continuous", "Movement"],
+        ["Versatile", "Handling"],
+        ["Easy", "Maintenance"]
+    ]
+},
+
+{
+    title: "Working Table Conveyor",
+    category: "ASSEMBLY & WORKSTATIONS",
+    image: "assets/working-table-conveyor.jpg",
+    description:
+        "Conveyor workstations designed to support assembly, inspection, sorting and packaging processes with an efficient working layout.",
+    specs: [
+        ["Ergonomic", "Workstation"],
+        ["Customizable", "Layout"],
+        ["Assembly", "Support"]
+    ]
+},
 
     {
         title: "Vertical Conveyor Elevators",
@@ -270,18 +308,8 @@ const rowTwo =
    FIRST ROW
    First 5 products
 */
-
-const firstFive =
-    products.slice(0, 5);
-
-
-/*
-   SECOND ROW
-   Next 5 products
-*/
-
-const secondFive =
-    products.slice(5, 10);
+const firstFive = products.slice(0, 6);
+const secondFive = products.slice(6, 13);
 
 
 /* =====================================================
