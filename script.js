@@ -151,31 +151,33 @@ const products = [
         ]
     },
 
-    {
-        title: "Industrial Automation Machines",
-        category: "SMART AUTOMATION",
-        image: "assets/product-08.jpg",
-        description:
-            "Industrial automation machines designed to reduce repetitive manual operations and improve productivity.",
-        specs: [
-            ["PLC", "Control"],
-            ["Automated", "Cycle"],
-            ["Custom", "Build"]
-        ]
-    },
+   
+{
+    title: "Spiral Conveyor Systems",
+    category: "SPIRAL CONVEYOR",
+    image: "product-08-finale.jpeg",
+    description:
+        "Space-efficient spiral conveyor systems designed to transport products vertically between different levels while maintaining a smooth and continuous flow.",
+    specs: [
+        ["Space-Saving", "Design"],
+        ["Vertical", "Transport"],
+        ["Continuous", "Flow"]
+    ]
+},
 
-    {
-        title: "Custom Automation Solutions",
-        category: "CUSTOM AUTOMATION",
-        image: "assets/product-09.jpg",
-        description:
-            "Customized automation machines developed around your specific product, process and production requirements.",
-        specs: [
-            ["Custom", "Engineering"],
-            ["Smart", "Control"],
-            ["Scalable", "System"]
-        ]
-    },
+{
+    title: "Plastic Modular Belt Conveyor Systems",
+    category: "MODULAR BELT CONVEYOR",
+    image: "assets/product-09-finale.jpeg",
+    description:
+        "Durable plastic modular belt conveyor systems designed for reliable product handling, easy maintenance, and efficient movement across industrial production lines.",
+    specs: [
+        ["Modular", "Belt"],
+        ["Easy", "Maintenance"],
+        ["Durable", "Design"]
+    ]
+},
+
 
     {
         title: "Complete Conveyor Automation",
