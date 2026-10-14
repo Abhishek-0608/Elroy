@@ -4980,3 +4980,50 @@ main > section:not(.hero).scroll-reveal.is-visible {
 .about-image:active img {
     transform: scale(1.05);
 }
+
+/* ELROY About / Company Image Zoom Effect */
+.about-visual .about-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    isolation: isolate;
+}
+
+/* Smooth zoom on the company image */
+.about-visual .about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: transform;
+}
+
+/* Desktop hover zoom */
+@media (hover: hover) and (pointer: fine) {
+    .about-visual .about-image:hover img {
+        transform: scale(1.08);
+    }
+}
+
+/* Mobile touch zoom */
+.about-visual .about-image:active img {
+    transform: scale(1.05);
+}
+
+/* Keep the image label above the zooming image */
+.about-visual .about-image .about-image-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .about-visual .about-image img {
+        transition: none;
+    }
+}
