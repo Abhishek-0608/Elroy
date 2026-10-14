@@ -4944,44 +4944,11 @@ main > section:not(.hero).scroll-reveal.is-visible {
     }
 }
 
-/* ELROY Company image zoom effect */
-.company-image,
-.about-image,
-.company-image img,
-.about-image img {
-    transition: transform 0.6s ease;
-}
 
-/* Zoom the image, not the entire company section */
-.company-image,
-.about-image {
-    overflow: hidden;
-    border-radius: 20px;
-}
+/* =====================================
+   ELROY COMPANY IMAGE - ZOOM EFFECT
+===================================== */
 
-.company-image img,
-.about-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Desktop hover zoom */
-@media (hover: hover) and (pointer: fine) {
-    .company-image:hover img,
-    .about-image:hover img {
-        transform: scale(1.08);
-    }
-}
-
-/* Mobile touch feedback */
-.company-image:active img,
-.about-image:active img {
-    transform: scale(1.05);
-}
-
-/* ELROY About / Company Image Zoom Effect */
 .about-visual .about-image {
     position: relative;
     overflow: hidden;
@@ -4989,41 +4956,32 @@ main > section:not(.hero).scroll-reveal.is-visible {
     isolation: isolate;
 }
 
-/* Smooth zoom on the company image */
-.about-visual .about-image img {
+/* Image setup */
+.about-visual .about-image > img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transform: scale(1);
-    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
-    will-change: transform;
+    transform-origin: center;
+    transition: transform 0.7s ease !important;
 }
 
 /* Desktop hover zoom */
 @media (hover: hover) and (pointer: fine) {
-    .about-visual .about-image:hover img {
-        transform: scale(1.08);
+    .about-visual .about-image:hover > img {
+        transform: scale(1.12) !important;
     }
 }
 
-/* Mobile touch zoom */
-.about-visual .about-image:active img {
-    transform: scale(1.05);
+/* Mobile press effect */
+.about-visual .about-image:active > img {
+    transform: scale(1.08) !important;
 }
 
-/* Keep the image label above the zooming image */
-.about-visual .about-image .about-image-label {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-}
-
-/* Respect reduced-motion preferences */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .about-visual .about-image img {
-        transition: none;
+    .about-visual .about-image > img {
+        transition: none !important;
     }
 }
