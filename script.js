@@ -1209,10 +1209,10 @@ if (submitCustomerReview) {
                     "d632d4b2-5719-40a6-bf9f-4937ea54e9a3",
 
                 subject:
-                    "New Customer Review - PISHON Conveyor Systems",
+                    "New Customer Review - ELROY Conveyor Systems",
 
                 from_name:
-                    "PISHON Website",
+                    "ELROY Website",
 
                 name:
                     name,
