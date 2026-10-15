@@ -5060,3 +5060,27 @@ main > section:not(.hero).scroll-reveal.is-visible {
         transition: none;
     }
 }
+
+/* =====================================================
+   PRODUCT ROW — MANUAL DRAG + AUTO SCROLL
+===================================================== */
+
+.product-row {
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+
+.product-row.is-dragging {
+    cursor: grabbing;
+}
+
+.product-row.is-dragging .product-card {
+    pointer-events: none;
+}
+
+/* Keep the existing conveyor animation and hide scrollbars */
+.product-row-wrapper {
+    overflow: hidden;
+}

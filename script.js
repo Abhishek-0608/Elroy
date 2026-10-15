@@ -348,6 +348,116 @@ populateRow(
     secondFive
 );
 
+/* =====================================================
+   MANUAL DRAG + SWIPE FOR PRODUCT CONVEYOR ROWS
+   Preserves the existing automatic animations
+===================================================== */
+
+[rowOne, rowTwo].forEach((row) => {
+    if (!row) return;
+
+    let startX = 0;
+    let startTime = 0;
+    let animation = null;
+    let isDragging = false;
+    let hasMoved = false;
+    let pointerId = null;
+
+    const wrapper = row.closest(".product-row-wrapper");
+
+    if (!wrapper) return;
+
+    row.addEventListener("pointerdown", (event) => {
+        // Only use the primary mouse button; allow touch and pen.
+        if (event.pointerType === "mouse" && event.button !== 0) {
+            return;
+        }
+
+        animation = row.getAnimations().find(
+            (item) => item.effect && item.playState !== "finished"
+        );
+
+        if (!animation) return;
+
+        startX = event.clientX;
+        startTime = Number(animation.currentTime) || 0;
+        isDragging = true;
+        hasMoved = false;
+        pointerId = event.pointerId;
+
+        animation.pause();
+        row.classList.add("is-dragging");
+
+        row.setPointerCapture(pointerId);
+    });
+
+    row.addEventListener("pointermove", (event) => {
+        if (!isDragging || event.pointerId !== pointerId) return;
+
+        const deltaX = event.clientX - startX;
+
+        if (Math.abs(deltaX) > 5) {
+            hasMoved = true;
+        }
+
+        if (!hasMoved || !animation) return;
+
+        const duration = Number(
+            animation.effect.getTiming().duration
+        );
+
+        // Match the distance used by the existing 50% conveyor loop.
+        const distance = row.scrollWidth / 2 + 10;
+
+        if (!Number.isFinite(duration) || duration <= 0 || distance <= 0) {
+            return;
+        }
+
+        // Row 1 moves right as time advances; row 2 moves left.
+        const direction = row.classList.contains("row-one") ? 1 : -1;
+
+        let nextTime =
+            startTime + (deltaX / distance) * duration * direction;
+
+        // Keep animation time inside its loop.
+        nextTime = ((nextTime % duration) + duration) % duration;
+
+        animation.currentTime = nextTime;
+    });
+
+    function finishDrag(event) {
+        if (!isDragging) return;
+        if (event && event.pointerId !== pointerId) return;
+
+        isDragging = false;
+        row.classList.remove("is-dragging");
+
+        if (animation) {
+            animation.play();
+        }
+
+        // Suppress the card click only if the user actually dragged.
+        if (hasMoved) {
+            row.dataset.dragged = "true";
+        }
+
+        animation = null;
+        pointerId = null;
+    }
+
+    row.addEventListener("pointerup", finishDrag);
+    row.addEventListener("pointercancel", finishDrag);
+    row.addEventListener("lostpointercapture", finishDrag);
+
+    row.addEventListener("click", (event) => {
+        if (row.dataset.dragged === "true") {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            delete row.dataset.dragged;
+        }
+    }, true);
+});
+
 
 /* =====================================================
    MODAL
